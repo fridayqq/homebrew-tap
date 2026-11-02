@@ -12,14 +12,13 @@ cask "browser-zero" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "BrowserZero.app"
 
   # Releases are not notarized yet; clear the quarantine flag so Gatekeeper lets it open.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/BrowserZero.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/BrowserZero.app"]
   end
 
   uninstall quit: "dev.fridayqq.BrowserZero"
