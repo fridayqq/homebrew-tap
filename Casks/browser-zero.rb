@@ -1,6 +1,6 @@
 cask "browser-zero" do
-  version "0.1.0"
-  sha256 "8c41f71003c7e41c8c02bf8d18a724da2102a3031a556a2216865948236c0701"
+  version "0.1.1"
+  sha256 "63ed39d3c0f809e77019cf79695d28a7685a46cc497b9967d766358f60e54f54"
 
   url "https://github.com/fridayqq/BrowserZero/releases/download/v#{version}/BrowserZero-#{version}.zip"
   name "Browser Zero"
